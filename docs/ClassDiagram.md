@@ -29,12 +29,17 @@ classDiagram
         +HandleBossAppearance()
         +TriggerCutscenes()
     }
+    class Enemy{
+        +AttackPlayer()
+        +SpwanAndDestroy()
+    }
 
     Player --|> WaveManager
     WaveManager --|> GameManager
     GameManager --|> UIManager
     GameManager --|> AudioManager
     GameManager --|> EventSystem
+    GameManager --|> Enemy
 ```
 
 ### 요구사항 정리
@@ -79,4 +84,10 @@ classDiagram
 - **필요한 기능**:
   - `HandleBossAppearance()`: 보스 등장 연출.
   - `TriggerCutscenes()`: 컷씬 실행.
-```
+
+## Enemy 클래스
+- **책임**: 몬스터의 기본적인 기능
+- **필요한 기능**:
+   - AttackPlayer() : 플레이어를 찾아서 공격
+   - SpwanAndDestroy() : 몬스터 리젠과 파괴
+      
