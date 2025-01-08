@@ -33,6 +33,9 @@ classDiagram
         +AttackPlayer()
         +SpwanAndDestroy()
     }
+    class Map{
+        +CamFollow()
+    }
 
     Player --|> WaveManager
     WaveManager --|> GameManager
