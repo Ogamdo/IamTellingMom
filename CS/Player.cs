@@ -1,3 +1,5 @@
+using UnityEngine;
+using System.Collections;
 /// <summary>
 /// 플레이어 캐릭터의 동작과 상태를 관리하는 클래스
 /// </summary>

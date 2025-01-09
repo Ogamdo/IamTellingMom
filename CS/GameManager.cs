@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
     public int Score => score;
     public int HighScore => highScore;
 
+    [Header("씬 관리")]
+    private const string GAME_SCENE_NAME = "GameScene";  // 게임 씬 이름
+
     private void Awake()
     {
         // 싱글톤 패턴 구현
@@ -214,5 +217,26 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveGameData();
+    }
+
+    /// <summary>
+    /// 다음 씬(게임 씬)으로 전환
+    /// </summary>
+    public void LoadNextScene()
+    {
+        StartCoroutine(LoadSceneRoutine());
+    }
+
+    private IEnumerator LoadSceneRoutine()
+    {
+        // 현재 씬 페이드 아웃 등의 효과를 줄 수 있음
+        ResetGameState();
+        yield return new WaitForSeconds(0.5f); // 전환 효과를 위한 대기 시간
+        
+        // 씬 로드
+        UnityEngine.SceneManagement.SceneManager.LoadScene(GAME_SCENE_NAME);
+        
+        // 게임 시작 처리
+        StartGame();
     }
 } 
