@@ -1,3 +1,6 @@
+using UnityEngine;
+using Cinemachine;
+
 /// <summary>
 /// 게임 맵과 카메라 동작을 관리하는 클래스
 /// </summary>

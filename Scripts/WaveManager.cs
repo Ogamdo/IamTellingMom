@@ -1,3 +1,5 @@
+using UnityEngine;
+
 /// <summary>
 /// 적 웨이브 생성과 진행을 관리하는 클래스
 /// </summary>

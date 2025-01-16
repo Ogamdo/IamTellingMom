@@ -1,3 +1,5 @@
+using UnityEngine;
+
 /// <summary>
 /// 적 캐릭터의 기본 동작을 관리하는 클래스
 /// </summary>
